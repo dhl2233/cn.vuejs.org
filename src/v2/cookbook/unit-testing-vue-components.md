@@ -54,7 +54,7 @@ test('Hello', () => {
   // `username` 在除去头尾空格之后不应该少于 7 个字符
   wrapper.setData({ username: ' '.repeat(7) })
 
-  // 确认错误信息被渲染了
+  // 确认错误信息被渲染(呈现)了
   expect(wrapper.find('.error').exists()).toBe(true)
 
   // 将名字更新至足够长
@@ -137,7 +137,7 @@ export default {
 
 我们应该测试的内容有：
 
-- `message` 是否被渲染
+- `message` 是否被渲染（呈现）
 - 如果 `error` 是 `true`，则 `<div class="error">` 应该展示
 - 如果 `error` 是 `false`，则 `<div class="error">` 不应该展示
 
@@ -161,7 +161,7 @@ describe('Foo', () => {
     // 确认是否渲染了 `message`
     expect(wrapper.find('.message').text()).toEqual('Hello World')
 
-    // 断言渲染了错误信息
+    // 断言渲染（呈现）了错误信息
     expect(wrapper.find('.error').exists()).toBeTruthy()
 
     // 更新 `username` 并断言错误信息不再被渲染
